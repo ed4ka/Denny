@@ -34,7 +34,7 @@ public class Subject
 
     public void AddLesson(Lesson lesson)
     {
-        Lesson.Add(lesson);
+        lessons.Add(lesson);
     }
 
     public double AverageRating()
