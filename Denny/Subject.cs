@@ -12,13 +12,15 @@ public class Subject
     {
         get
         {
-            //TODO: Implement me...
-            throw new NotImplementedException();
+            return name;
         }
         set
         {
-            //TODO: Implement me...
-            throw new NotImplementedException();
+            if(value.Length < 2 || value.Length > 40)
+            {
+                throw new ArgumentException("Name should be between 2 and 40 characters!");
+            }
+            name = value;
         }
     }
 
@@ -32,8 +34,7 @@ public class Subject
 
     public void AddLesson(Lesson lesson)
     {
-        //TODO: Implement me...
-        throw new NotImplementedException();
+        Lesson.Add(lesson);
     }
 
     public double AverageRating()

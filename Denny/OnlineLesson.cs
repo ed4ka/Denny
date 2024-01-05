@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,25 +13,30 @@ public class OnlineLesson : Lesson
     {
         get
         {
-            //TODO: Implement me...
-            throw new NotImplementedException();
+            return platform;
         }
         set
         {
-            //TODO: Implement me...
-            throw new NotImplementedException();
+            if(value.Length <3 || value.Length > 30)
+            {
+                throw new ArgumentException("Platform should be between 3 and 30 characters!");
+            }
+            platform = value;
         }
     }
 
-    public OnlineLesson(string title, int duration, int grade, int difficulty, string teacher, string platform) : base(title, duration, grade, difficulty, teacher)
+    public OnlineLesson(string title, int duration, int grade, int difficulty, string teacher, string platform) : base(title, duration, grade, difficulty, teacher, p)
     {
-        //TODO: Implement me...
-        throw new NotImplementedException();
+        base.Title = title;
+        base.Duration = duration;
+        base.Grade = grade;
+        base.Difficulty = difficulty;
+        base.Teacher = teacher;
+        Platform = platform;
     }
 
     public override string ToString()
     {
-        //TODO: Implement me...
-        throw new NotImplementedException();
+        return $"Title: {Title} for {Grade} grade ({Duration} mins.) - difficulty {Difficulty} by {Teacher} (Rating: {Rating} / 5) @ Online: {Platform}";
     }
 }

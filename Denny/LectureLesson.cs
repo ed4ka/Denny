@@ -10,28 +10,29 @@ public class LectureLesson : Lesson
 
     public LectureLesson(string title, int duration, int grade, int difficulty, string teacher, string location) : base(title, duration, grade, difficulty, teacher)
     {
-        //TODO: Implement me...
-        throw new NotImplementedException();
+        base.Title = title;
+        Location = location;
+        base.Duration = duration;
+        base.Grade = grade;
+        base.Difficulty = difficulty;
+        base.Teacher = teacher;
     }
 
     public string Location
     {
         get
         {
-            //TODO: Implement me...
-            throw new NotImplementedException();
+            return location;
         }
         set
         {
-            //TODO: Implement me...
-            throw new NotImplementedException();
+            location = value;
         }
     }
 
     public override string ToString()
     {
-        //TODO: Implement me...
-        throw new NotImplementedException();
+        return $"Title: {Title} for {Grade} grade ({Duration} mins.) - difficulty {Difficulty} by {Teacher} (Rating: {Rating} / 5) @ Onsite: {Location}";
     }
 
 }
